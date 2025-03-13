@@ -1,0 +1,155 @@
+/* src/components/common/Table/Table.css */
+.table-container {
+  position: relative;
+  background-color: var(--bg-medium);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.table-head {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--bg-medium);
+}
+
+.table-cell {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
+  text-align: left;
+}
+
+.table-head .table-cell {
+  font-weight: 500;
+  color: var(--text-medium);
+}
+
+.table-body .table-cell {
+  color: var(--text-light);
+}
+
+.table-selection-cell {
+  width: 48px;
+  text-align: center;
+}
+
+.table-selection-cell input[type="checkbox"] {
+  cursor: pointer;
+}
+
+.sortable-column {
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.sortable-column:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.table-cell-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sort-icon {
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+  color: var(--text-muted);
+}
+
+.sorted-asc .sort-icon,
+.sorted-desc .sort-icon {
+  color: var(--primary);
+}
+
+.table-row {
+  transition: background-color 0.2s;
+}
+
+.table-row:hover {
+  background-color: rgba(30, 41, 59, 0.8);
+}
+
+.row-selected {
+  background-color: rgba(234, 88, 12, 0.1);
+}
+
+.row-selected:hover {
+  background-color: rgba(234, 88, 12, 0.15);
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.table-empty-cell {
+  text-align: center;
+  padding: 32px;
+  color: var(--text-muted);
+}
+
+.table-loading-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(15, 23, 42, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.table-loading-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-light);
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.table-header-container,
+.table-footer {
+  padding: 16px;
+}
+
+.table-footer {
+  border-top: 1px solid var(--border-color);
+}

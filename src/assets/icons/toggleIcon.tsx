@@ -1,0 +1,33 @@
+import React from "react";
+
+interface IconProps extends React.SVGProps<SVGSVGElement> {
+  size?: number;
+}
+
+export const ToggleIcon: React.FC<IconProps> = ({ size = 13, ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size} // Giữ tỷ lệ gốc (22x20)
+      viewBox="0 0 22 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M9.3358 4.14405V3.50866C9.3358 2.12368 8.21282 1 6.82718 1H3.50796C2.12298 1.0007 1 2.12368 1 3.50866V11.0858C1 12.4715 2.12298 13.5944 3.50796 13.5944H6.83416C8.21562 13.5944 9.33508 12.475 9.3358 11.0935V10.4518"
+        stroke="white"
+        strokeWidth="1.44"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M13.96 7.29621H5.76294M13.96 7.29621L11.9666 5.31152M13.96 7.29621L11.9666 9.28154"
+        stroke="white"
+        strokeWidth="1.44"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};

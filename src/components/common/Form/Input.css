@@ -1,0 +1,115 @@
+/* src/components/common/Form/Input.css */
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--bg-dark);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-wrapper:focus-within {
+  border-color: var(--primary);
+}
+
+.input-error {
+  border-color: var(--danger);
+}
+
+.input-error:focus-within {
+  border-color: var(--danger);
+}
+
+.input-control {
+  flex: 1;
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: var(--text-light);
+  outline: none;
+}
+
+.input-prefix,
+.input-suffix {
+  display: flex;
+  align-items: center;
+  color: var(--text-muted);
+}
+
+.has-prefix .input-control {
+  padding-left: 0;
+}
+
+.has-suffix .input-control {
+  padding-right: 0;
+}
+
+/* Sizes */
+.input-sm {
+  height: 32px;
+}
+
+.input-sm .input-control {
+  font-size: 12px;
+  padding: 6px 8px;
+}
+
+.input-sm .input-prefix {
+  padding-left: 8px;
+}
+
+.input-sm .input-suffix {
+  padding-right: 8px;
+}
+
+.input-md {
+  height: 40px;
+}
+
+.input-md .input-control {
+  font-size: 14px;
+  padding: 8px 12px;
+}
+
+.input-md .input-prefix {
+  padding-left: 12px;
+}
+
+.input-md .input-suffix {
+  padding-right: 12px;
+}
+
+.input-lg {
+  height: 48px;
+}
+
+.input-lg .input-control {
+  font-size: 16px;
+  padding: 10px 16px;
+}
+
+.input-lg .input-prefix {
+  padding-left: 16px;
+}
+
+.input-lg .input-suffix {
+  padding-right: 16px;
+}
+
+/* Clear button */
+.input-clear-button {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 2px;
+  margin-left: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-clear-button:hover {
+  color: var(--text-light);
+}

@@ -1,0 +1,49 @@
+/* src/components/common/Form/FormField.css */
+.form-field {
+  margin-bottom: 20px;
+}
+
+.form-field-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.form-field-label label {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.required-mark {
+  color: var(--danger);
+  margin-left: 4px;
+}
+
+.tooltip-icon {
+  color: var(--text-muted);
+  cursor: help;
+}
+
+.form-field-control {
+  position: relative;
+}
+
+.form-field-message {
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+.form-field-message.error {
+  color: var(--danger);
+}
+
+.form-field-message.helper {
+  color: var(--text-muted);
+}
+
+.form-field.has-error input,
+.form-field.has-error select,
+.form-field.has-error textarea {
+  border-color: var(--danger);
+}

@@ -1,0 +1,340 @@
+/* src/pages/Tasks/Tasks.css */
+
+/* Continue using the same variable definitions for consistency */
+:root {
+  --primary: #ea580c;
+  --primary-hover: rgba(234, 88, 12, 0.1);
+  --bg-dark: #0f172a;
+  --bg-medium: #1e293b;
+  --bg-light: #334155;
+  --text-light: #e2e8f0;
+  --text-medium: #94a3b8;
+  --text-dark: #64748b;
+  --border: #334155;
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --info: #3b82f6;
+}
+
+/* App Layout - same as Contacts */
+.app-container {
+  display: flex;
+  height: 100vh;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Task-specific Styles */
+.tasks-filter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.filter-button {
+  padding: 8px 12px;
+  border: none;
+  background: transparent;
+  color: var(--text-medium);
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.2s;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.filter-button.active {
+  color: var(--primary);
+}
+
+.filter-button:hover:not(.active) {
+  color: var(--text-light);
+}
+
+.filter-separator {
+  width: 1px;
+  height: 16px;
+  background-color: var(--border);
+}
+
+/* Tasks Table */
+.tasks-table {
+  background-color: var(--bg-medium);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.task-table-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--bg-medium);
+}
+
+.task-row {
+  transition: background-color 0.2s;
+}
+
+.task-row:hover {
+  background-color: rgba(30, 41, 59, 0.8);
+}
+
+.task-completed-cell {
+  width: 40px;
+  text-align: center;
+}
+
+.task-completed-button {
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid var(--text-medium);
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.task-completed-button.completed {
+  background-color: var(--success);
+  border-color: var(--success);
+}
+
+.task-completed-button.completed.warning {
+  background-color: var(--warning);
+  border-color: var(--warning);
+}
+
+.task-completed-button.completed.danger {
+  background-color: var(--danger);
+  border-color: var(--danger);
+}
+
+.task-title-cell {
+  min-width: 180px;
+}
+
+.task-date-cell {
+  min-width: 140px;
+}
+
+.task-status-cell {
+  min-width: 100px;
+}
+
+.task-status {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.task-status.Appel {
+  background-color: var(--info);
+  color: white;
+}
+
+.task-status.E-mail {
+  background-color: var(--success);
+  color: white;
+}
+
+.task-status.À-faire {
+  background-color: var(--warning);
+  color: white;
+}
+
+.task-status.En-retard {
+  background-color: var(--danger);
+  color: white;
+}
+
+.task-associate-cell {
+  min-width: 160px;
+}
+
+.task-owner-cell {
+  min-width: 150px;
+}
+
+.task-date-highlight {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: var(--danger);
+  color: white;
+}
+
+.task-due-date {
+  font-size: 14px;
+  display: block;
+}
+
+.task-due-time {
+  font-size: 12px;
+  color: var(--text-medium);
+  display: block;
+  margin-top: 2px;
+}
+
+/* Task Edit Modal */
+.task-edit-modal {
+  width: 500px;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+  background-color: var(--bg-dark);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.task-edit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.task-edit-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.task-edit-close {
+  background: transparent;
+  border: none;
+  color: var(--text-medium);
+  cursor: pointer;
+}
+
+.task-edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+
+.form-group {
+  flex: 1;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px 12px;
+  background-color: var(--bg-medium);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.form-control-textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: var(--text-medium);
+}
+
+.task-form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.task-complete-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.task-complete-checkbox input {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.task-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-cancel {
+  padding: 10px 16px;
+  background: transparent;
+  border: none;
+  color: var(--text-medium);
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: color 0.2s;
+}
+
+.btn-cancel:hover {
+  color: var(--text-light);
+}
+
+.btn-save {
+  padding: 10px 24px;
+  background-color: var(--primary);
+  border: none;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-save:hover {
+  background-color: #c2410c;
+}

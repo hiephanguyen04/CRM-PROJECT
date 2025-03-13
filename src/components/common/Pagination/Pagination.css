@@ -1,0 +1,156 @@
+/* src/components/common/Pagination/Pagination.css */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  font-size: 14px;
+  color: var(--text-medium);
+}
+
+.pagination-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.pagination-total {
+  margin-right: 16px;
+}
+
+.pagination-actions {
+  display: flex;
+  align-items: center;
+}
+
+.pagination-nav-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: transparent;
+  color: var(--text-medium);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pagination-nav-button:hover:not(:disabled) {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+}
+
+.pagination-nav-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-items {
+  display: flex;
+  align-items: center;
+  margin: 0 8px;
+}
+
+.pagination-item,
+.pagination-ellipsis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin: 0 4px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: transparent;
+  color: var(--text-medium);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pagination-item:hover:not(:disabled):not(.pagination-active) {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+}
+
+.pagination-active {
+  border-color: var(--primary);
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.pagination-ellipsis {
+  border: none;
+  cursor: pointer;
+}
+
+.pagination-jumper {
+  display: flex;
+  align-items: center;
+  margin-left: 16px;
+}
+
+.pagination-jumper input {
+  width: 40px;
+  padding: 6px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--bg-medium);
+  color: var(--text-light);
+  text-align: center;
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.pagination-jumper input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.pagination-size-changer {
+  display: flex;
+  align-items: center;
+  margin-left: 16px;
+}
+
+.pagination-size-changer span {
+  margin-right: 8px;
+}
+
+.pagination-size-changer select {
+  padding: 4px 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--bg-medium);
+  color: var(--text-light);
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.pagination-size-changer select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .pagination {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .pagination-total {
+    width: 100%;
+    order: 1;
+  }
+
+  .pagination-actions {
+    order: 2;
+  }
+
+  .pagination-jumper,
+  .pagination-size-changer {
+    order: 3;
+    margin-left: 0;
+  }
+}

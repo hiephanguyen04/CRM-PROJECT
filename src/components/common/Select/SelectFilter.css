@@ -1,0 +1,93 @@
+/* src/components/common/Form/Select.css */
+.select-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--bg-dark);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.select-wrapper:focus-within {
+  border-color: var(--primary);
+}
+
+.select-error {
+  border-color: var(--danger);
+}
+
+.select-error:focus-within {
+  border-color: var(--danger);
+}
+
+.select-control {
+  flex: 1;
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: var(--text-light);
+  outline: none;
+  appearance: none;
+  padding-right: 30px; /* Space for arrow */
+  cursor: pointer;
+}
+
+.select-arrow {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--text-muted);
+}
+
+.select-prefix {
+  display: flex;
+  align-items: center;
+  color: var(--text-muted);
+}
+
+.has-prefix .select-control {
+  padding-left: 0;
+}
+
+/* Sizes */
+.select-sm {
+  height: 32px;
+}
+
+.select-sm .select-control {
+  font-size: 12px;
+  padding: 6px 8px;
+}
+
+.select-sm .select-prefix {
+  padding-left: 8px;
+}
+
+.select-md {
+  height: 40px;
+}
+
+.select-md .select-control {
+  font-size: 14px;
+  padding: 8px 12px;
+}
+
+.select-md .select-prefix {
+  padding-left: 12px;
+}
+
+.select-lg {
+  height: 48px;
+}
+
+.select-lg .select-control {
+  font-size: 16px;
+  padding: 10px 16px;
+}
+
+.select-lg .select-prefix {
+  padding-left: 16px;
+}

@@ -1,0 +1,102 @@
+/* src/styles/global.css */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #dd5313;
+  --primary-dark: #c2410c;
+  --primary-hover: #dd531333;
+
+  --primary-light: #fb923c;
+  --bg-dark: #09091A;
+  --bg-medium: #17202E;
+  --bg-light: #334155;
+  --text-light: #FFFFFF;
+  --text-medium: #e2e8f0;
+  --text-muted: #94a3b8;
+  --border-color: #334155;
+  --danger: #FF001F;
+  --success: #8AD74E;
+  --success-400:#8AD74E33
+  --info: #0038FF;
+  --blue:#00F0FF
+  --warning: #FFE500;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-medium);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+input::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+/* Sidebar Styles */
+.app-sidebar {
+  width: 240px;
+  background-color: var(--bg-medium);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-nav {
+  padding: 16px 0;
+}
+
+.nav-list {
+  list-style-type: none;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  color: var(--text-muted);
+  transition: color 0.2s, background-color 0.2s;
+  border-left: 3px solid transparent;
+}
+
+.nav-link:hover {
+  background-color: rgba(51, 65, 85, 0.5);
+  color: var(--text-light);
+}
+
+.nav-link.active {
+  color: var(--primary);
+  background-color: rgba(234, 88, 12, 0.1);
+  border-right: 2px solid var(--primary);
+}
+
+.nav-icon {
+  margin-right: 12px;
+}
