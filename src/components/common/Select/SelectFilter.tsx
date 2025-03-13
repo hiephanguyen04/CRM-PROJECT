@@ -1,4 +1,3 @@
-// src/components/common/Form/Select.tsx
 import React, { ReactNode, SelectHTMLAttributes } from "react";
 import "./SelectFilter.css";
 
@@ -12,19 +11,15 @@ interface SelectProps
   options: SelectOption[];
   size?: "sm" | "md" | "lg";
   error?: boolean;
-  prefix?: ReactNode;
+  prefixIcon?: ReactNode;
   placeholder?: string;
 }
-
-/**
- * Composant de sélection réutilisable
- */
 const Select: React.FC<SelectProps> = ({
   options,
   size = "md",
   error = false,
   className = "",
-  prefix,
+  prefixIcon,
   placeholder,
   ...props
 }) => {
@@ -35,10 +30,10 @@ const Select: React.FC<SelectProps> = ({
       select-${size} 
       ${error ? "select-error" : ""} 
       ${className}
-      ${prefix ? "has-prefix" : ""}
+      ${prefixIcon ? "has-prefix" : ""}
     `}
     >
-      {prefix && <div className="select-prefix">{prefix}</div>}
+      {prefixIcon && <div className="select-prefix">{prefixIcon}</div>}
 
       <select className="select-control" {...props}>
         {placeholder && (
@@ -54,9 +49,7 @@ const Select: React.FC<SelectProps> = ({
       </select>
 
       <div className="select-arrow">
-        <svg width="10" height="6" viewBox="0 0 10 6">
-          <path d="M0 0.5L5 5.5L10 0.5H0Z" fill="currentColor" />
-        </svg>
+        <ArowIcon />
       </div>
     </div>
   );

@@ -17,3 +17,6 @@ export { QuestionIcon } from "./QuestionIcon";
 export { SearchIcon } from "./SearchIcon";
 export { SettingIcon } from "./SettingIcon";
 export { UserIcon } from "./UserIcon";
+export { FacebookIcon } from "./FacebookIcon";
+export { GoogleIcon } from "./GoogleIcon";
+export { ArowIcon } from "./ArowIcon";

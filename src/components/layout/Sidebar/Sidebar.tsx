@@ -12,7 +12,7 @@ import {
   Icon9,
   LogoIcon,
 } from "@/assets/icons";
-import { ToggleIcon } from "@/assets/icons/toggleIcon";
+import { LogoutIcon } from "@/assets/icons/toggleIcon";
 import { useAuth } from "@/contexts/AuthContext";
 import React from "react";
 import { NavLink } from "react-router-dom";
@@ -43,7 +43,7 @@ const Sidebar: React.FC = () => {
           ))}
         </ul>
         <button onClick={logout} className="toggle-btn">
-          <ToggleIcon />
+          <LogoutIcon />
         </button>
       </nav>
     </aside>

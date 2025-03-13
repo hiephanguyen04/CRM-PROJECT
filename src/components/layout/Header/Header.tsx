@@ -14,7 +14,7 @@ import "./Header.scss";
 
 const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
-  const { currentUser, logout } = useAuth();
+  const { currentUser } = useAuth();
   const location = useLocation();
 
   useEffect(() => {

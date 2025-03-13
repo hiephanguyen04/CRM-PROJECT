@@ -5,7 +5,7 @@ import Sidebar from "../../components/layout/Sidebar/Sidebar";
 import { tasksData } from "../../data/tasksMockData";
 import Pagination from "../../pages/Contacts/components/Pagination";
 import { Task, TaskFilter, TasksState } from "../../types/tasks.types";
-import "./Tasks.css";
+import "./Tasks.scss";
 
 import ActionBar from "./components/ActionBar";
 import TasksFilter from "./components/TasksFilter";
@@ -202,63 +202,66 @@ const Tasks: React.FC = () => {
   };
 
   return (
-    <div className="app-container">
-      <Sidebar activeItem={activeMenuItem} onItemClick={setActiveMenuItem} />
+    <div className="task">
+      <div className="app-container">
+        <Sidebar activeItem={activeMenuItem} onItemClick={setActiveMenuItem} />
 
-      <div className="content-wrapper">
-        <Header username="Sébastien Hanouna" role="CEO, Admin" />
+        <div className="content-wrapper">
+          <Header username="Sébastien Hanouna" role="CEO, Admin" />
 
-        <main>
-          <div className="main-content">
-            <ActionBar
-              tasksCount={tasks.length}
-              onSearch={handleSearch}
-              searchTerm={state.searchTerm}
-              filterOptions={{
-                primary: [{ label: "Plus de filtre", value: "" }],
-                owner: [{ label: "Tout le monde", value: "" }],
-              }}
-              selectedFilters={state.filterOptions}
-              onFilterChange={handleFilterChange}
-              onNewTask={handleNewTask}
-            />
+          <main>
+            <div className="main-content">
+              <ActionBar
+                tasksCount={tasks.length}
+                onSearch={handleSearch}
+                searchTerm={state.searchTerm}
+                filterOptions={{
+                  primary: [{ label: "Plus de filtre", value: "" }],
+                  owner: [{ label: "Tout le monde", value: "" }],
+                }}
+                selectedFilters={state.filterOptions}
+                onFilterChange={handleFilterChange}
+                onNewTask={handleNewTask}
+              />
 
-            <TasksFilter
-              selectedFilter={state.selectedFilter}
-              onFilterChange={handleTaskFilter}
-            />
+              <TasksFilter
+                selectedFilter={state.selectedFilter}
+                onFilterChange={handleTaskFilter}
+              />
 
-            <TasksTable
-              tasks={currentTasks}
-              selectedTasks={state.selectedTasks}
-              onTaskSelect={handleTaskSelect}
-              onSelectAll={handleSelectAll}
-              allTasksSelected={
-                state.selectedTasks.length === tasks.length && tasks.length > 0
-              }
-              onTaskStatusToggle={handleTaskStatusToggle}
-              onTaskEdit={openTaskEditModal}
-            />
+              <TasksTable
+                tasks={currentTasks}
+                selectedTasks={state.selectedTasks}
+                onTaskSelect={handleTaskSelect}
+                onSelectAll={handleSelectAll}
+                allTasksSelected={
+                  state.selectedTasks.length === tasks.length &&
+                  tasks.length > 0
+                }
+                onTaskStatusToggle={handleTaskStatusToggle}
+                onTaskEdit={openTaskEditModal}
+              />
 
-            <Pagination
-              currentPage={state.currentPage}
-              itemsPerPage={state.itemsPerPage}
-              totalItems={tasks.length}
-              onPageChange={handlePageChange}
-              onItemsPerPageChange={handleItemsPerPageChange}
-            />
-          </div>
-        </main>
+              <Pagination
+                currentPage={state.currentPage}
+                itemsPerPage={state.itemsPerPage}
+                totalItems={tasks.length}
+                onPageChange={handlePageChange}
+                onItemsPerPageChange={handleItemsPerPageChange}
+              />
+            </div>
+          </main>
+        </div>
+
+        {/* Task Edit Modal */}
+        {state.showTaskEditModal && state.currentTask && (
+          <TaskEditModal
+            task={state.currentTask}
+            onClose={closeTaskEditModal}
+            onSave={handleSaveTask}
+          />
+        )}
       </div>
-
-      {/* Task Edit Modal */}
-      {state.showTaskEditModal && state.currentTask && (
-        <TaskEditModal
-          task={state.currentTask}
-          onClose={closeTaskEditModal}
-          onSave={handleSaveTask}
-        />
-      )}
     </div>
   );
 };

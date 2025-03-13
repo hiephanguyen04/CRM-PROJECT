@@ -1,20 +1,20 @@
 /* src/pages/Login/Login.css */
 .login-container {
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  background: hsla(240, 67%, 13%, 0.9);
   padding: 20px;
 }
 
 .login-card {
   width: 100%;
   max-width: 506px;
-  height: 800px;
-  background-color: rgba(30, 41, 59, 0.8);
+  background-color: hsla(0, 0%, 100%, 0.07);
   border-radius: 16px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  padding: 40px;
+  padding: 46px 52px 28px 52px;
   position: relative;
   overflow: hidden;
 }
@@ -55,7 +55,7 @@
 }
 
 .logo {
-  color: #ea580c;
+  color: var(--primary);
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 24px;
@@ -63,30 +63,32 @@
 
 .title {
   color: #ffffff;
-  font-size: 28px;
-  font-weight: 600;
-  margin-bottom: 12px;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 8px;
 }
 
 .subtitle {
-  color: #94a3b8;
-  font-size: 14px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
   line-height: 1.5;
   margin-bottom: 24px;
 }
 
 .form-group {
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   z-index: 1;
 }
 
 .form-control {
   width: 100%;
+  height: 52px;
   padding: 16px;
   background-color: #ffffff;
   border: none;
-  border-radius: 8px;
+  border-radius: 3px;
   font-size: 14px;
   color: #0f172a;
   transition: box-shadow 0.3s ease;
@@ -99,7 +101,7 @@
 
 .forgot-password {
   text-align: right;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 
 .forgot-password a {
@@ -114,12 +116,11 @@
   background-color: #ea580c;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 3px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-bottom: 24px;
 }
 
 .btn-login:hover {
@@ -130,8 +131,9 @@
   display: flex;
   align-items: center;
   margin: 24px 0;
-  color: #94a3b8;
-  font-size: 14px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .divider::before,
@@ -139,11 +141,11 @@
   content: "";
   flex: 1;
   height: 1px;
-  background-color: #334155;
+  background-color: #ffffff;
 }
 
 .divider span {
-  padding: 0 16px;
+  padding: 0 8px;
 }
 
 .btn-google,
@@ -151,9 +153,9 @@
   width: 100%;
   padding: 14px;
   background-color: #ffffff;
-  color: #1e293b;
+  color: #dd5313;
   border: none;
-  border-radius: 8px;
+  border-radius: 3px;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
@@ -161,11 +163,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
+  gap: 4px;
 }
 
 .btn-facebook {
-  background-color: #1877f2;
+  background-color: #415a93;
   color: white;
 }
 
@@ -184,7 +187,7 @@
 
 .signup-prompt {
   text-align: center;
-  color: #94a3b8;
+  color: #ffffff;
   font-size: 14px;
   margin-top: 24px;
 }
@@ -199,7 +202,7 @@
   background-color: rgba(220, 38, 38, 0.1);
   color: #ef4444;
   padding: 12px;
-  border-radius: 8px;
+  border-radius: 3px;
   margin-bottom: 16px;
   font-size: 14px;
   text-align: center;

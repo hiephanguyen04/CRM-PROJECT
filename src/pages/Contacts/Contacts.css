@@ -243,7 +243,6 @@ main {
   background-color: var(--bg-medium);
   border-radius: 12px;
   overflow: hidden;
-  margin-bottom: 24px;
 }
 
 table {
